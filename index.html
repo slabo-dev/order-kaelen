@@ -354,7 +354,6 @@
       </table>
     </section>
 
-    <!-- ===== АВТО-МОДЕРАЦИЯ ===== -->
     <section class="doc-section" id="automod">
       <h2><span class="emoji">🚫</span> Авто-модерация</h2>
       <p>Бот автоматически фильтрует сообщения по чёрному списку слов и ссылкам.</p>
@@ -387,7 +386,6 @@
       </ul>
     </section>
 
-    <!-- ===== ФИЛЬТР ССЫЛОК ===== -->
     <section class="doc-section" id="automod-links">
       <h2><span class="emoji">🔗</span> Фильтр ссылок</h2>
       <p>Автоматическая блокировка ссылок на сторонние сайты.</p>
@@ -423,23 +421,48 @@
       </ul>
     </section>
 
+    <!-- ===== ПРИВЕТСТВИЯ (исправлено) ===== -->
     <section class="doc-section" id="setup-welcome">
       <h2><span class="emoji">👋</span> Приветствия</h2>
+      <p>Бот автоматически приветствует новых участников и оповещает о выходе.</p>
+
+      <h3>Настройка приветствий</h3>
       <table class="cmd-table">
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
-          <tr><td><span class="cmd">!welcome &lt;#канал&gt;</span></td><td class="desc">Установить канал для приветствий</td></tr>
-          <tr><td><span class="cmd">!welcome off</span></td><td class="desc">Отключить приветствия</td></tr>
-          <tr><td><span class="cmd">!welcome test</span></td><td class="desc">Отправить тестовое приветствие</td></tr>
-          <tr><td><span class="cmd">!welcome message &lt;текст&gt;</span></td><td class="desc">Изменить текст приветствия. Используйте <code>{user}</code> для упоминания</td></tr>
-          <tr><td><span class="cmd">!welcome bye &lt;текст&gt;</span></td><td class="desc">Изменить текст прощания</td></tr>
+          <tr><td><span class="cmd">!welcome join #канал</span></td><td class="desc">Установить канал для приветствий</td></tr>
+          <tr><td><span class="cmd">!welcome join message &lt;текст&gt;</span></td><td class="desc">Изменить текст приветствия. Используйте <code>{user}</code> для упоминания</td></tr>
+          <tr><td><span class="cmd">!welcome join disable</span></td><td class="desc">Отключить приветствия</td></tr>
+          <tr><td><span class="cmd">!welcome exit #канал</span></td><td class="desc">Установить канал для прощаний</td></tr>
+          <tr><td><span class="cmd">!welcome exit message &lt;текст&gt;</span></td><td class="desc">Изменить текст прощания. Используйте <code>{member}</code> для имени</td></tr>
+          <tr><td><span class="cmd">!welcome exit disable</span></td><td class="desc">Отключить прощания</td></tr>
+          <tr><td><span class="cmd">!welcome show</span></td><td class="desc">Показать текущие настройки приветствий</td></tr>
         </tbody>
       </table>
-      <div class="example"><code>!welcome #общий</code><div class="output">✅ Канал для приветствий установлен: #общий</div></div>
+
+      <h4>Формат сообщений</h4>
+      <p><strong>Приветствие по умолчанию:</strong></p>
+      <div class="example">
+        <code>👋 Добро пожаловать на сервер, {user}!<br>Мы рады видеть тебя здесь. Прочитай правила и присоединяйся к общению.</code>
+      </div>
+      <p><strong>Прощание по умолчанию:</strong></p>
+      <div class="example">
+        <code>👋 {member} покинул нас. Всего хорошего!</code>
+      </div>
+
+      <div class="example">
+        <code>!welcome join #общий</code>
+        <div class="output">✅ Канал для приветствий установлен: #общий</div>
+        <code>!welcome join message "Привет, {user}! 😊 Рады тебя видеть!"</code>
+        <div class="output">✅ Текст приветствия обновлён.</div>
+        <code>!welcome show</code>
+        <div class="output">📋 Настройки приветствий:<br>🟢 Приветствия: Включены<br>📌 Канал: #общий<br>📝 Текст: Привет, {user}! 😊 Рады тебя видеть!</div>
+      </div>
     </section>
 
     <section class="doc-section" id="setup-newbie">
       <h3>🆕 Роль новичка</h3>
+      <p>Автоматическая выдача роли новым участникам при входе на сервер.</p>
       <table class="cmd-table">
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
@@ -447,10 +470,18 @@
           <tr><td><span class="cmd">!рольновичка remove</span></td><td class="desc">Убрать автоматическую выдачу роли новичкам</td></tr>
         </tbody>
       </table>
+      <div class="example">
+        <code>!рольновичка @Новичок</code>
+        <div class="output">✅ Роль @Новичок будет выдаваться новым участникам.</div>
+        <code>!рольновичка remove</code>
+        <div class="output">✅ Автовыдача роли новичкам отключена.</div>
+      </div>
     </section>
 
     <section class="doc-section" id="custom">
       <h2><span class="emoji">📝</span> Кастомные команды</h2>
+      <p>Создавайте свои команды для сервера. Команды сохраняются и доступны всем участникам.</p>
+
       <table class="cmd-table">
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
@@ -460,6 +491,7 @@
           <tr><td><span class="cmd">!editcommand &lt;название&gt; &lt;новое_содержание&gt;</span></td><td class="desc">Изменить существующую команду</td></tr>
         </tbody>
       </table>
+
       <h3>Типы кастомных команд</h3>
       <table class="cmd-table">
         <thead><tr><th>Тип</th><th>Описание</th><th>Пример</th></tr></thead>
@@ -469,6 +501,11 @@
           <tr><td><span class="cmd">role</span></td><td class="desc">Выдача роли при выполнении команды</td><td><code>!vip → выдаёт роль @VIP</code></td></tr>
         </tbody>
       </table>
+
+      <div class="example">
+        <code>!createcommand rules text "Правила сервера: 1. Без флуда. 2. Без оскорблений."</code>
+        <div class="output">✅ Команда <code>!rules</code> создана. Тип: text</div>
+      </div>
     </section>
 
     <!-- ===== КЛАНЫ ===== -->
@@ -536,14 +573,21 @@
         <div class="step"><span class="step-num">7</span><span class="step-text">Следите за рейтингом: <code>!clan top</code> — показывает лучшие кланы.</span></div>
       </div>
 
-      <h3>Гайд 2: Настройка авто-модерации и фильтра ссылок</h3>
+      <h3>Гайд 2: Настройка приветствий</h3>
+      <div class="guide">
+        <div class="step"><span class="step-num">1</span><span class="step-text">Установите канал: <code>!welcome join #общий</code></span></div>
+        <div class="step"><span class="step-num">2</span><span class="step-text">Измените текст: <code>!welcome join message "Привет, {user}! Рады тебя видеть!"</code></span></div>
+        <div class="step"><span class="step-num">3</span><span class="step-text">Настройте прощание: <code>!welcome exit #общий</code> и <code>!welcome exit message "Пока, {member}!"</code></span></div>
+        <div class="step"><span class="step-num">4</span><span class="step-text">Проверьте настройки: <code>!welcome show</code></span></div>
+      </div>
+
+      <h3>Гайд 3: Настройка авто-модерации и фильтра ссылок</h3>
       <div class="guide">
         <div class="step"><span class="step-num">1</span><span class="step-text">Добавьте слова в чёрный список: <code>!bm addword мат</code></span></div>
-        <div class="step"><span class="step-num">2</span><span class="step-text">Проверьте список: <code>!bm listwords</code></span></div>
-        <div class="step"><span class="step-num">3</span><span class="step-text">Включите авто-модерацию: <code>!bm enable</code></span></div>
-        <div class="step"><span class="step-num">4</span><span class="step-text">Настройте авто-мут: <code>!bm mutemode on</code> и <code>!bm mutetime 600</code></span></div>
-        <div class="step"><span class="step-num">5</span><span class="step-text">Включите фильтр ссылок: <code>!bm linkfilter on</code></span></div>
-        <div class="step"><span class="step-num">6</span><span class="step-text">Выберите действие: <code>!bm linkaction mute</code> — мут за ссылку</span></div>
+        <div class="step"><span class="step-num">2</span><span class="step-text">Включите авто-модерацию: <code>!bm enable</code></span></div>
+        <div class="step"><span class="step-num">3</span><span class="step-text">Настройте авто-мут: <code>!bm mutemode on</code> и <code>!bm mutetime 600</code></span></div>
+        <div class="step"><span class="step-num">4</span><span class="step-text">Включите фильтр ссылок: <code>!bm linkfilter on</code></span></div>
+        <div class="step"><span class="step-num">5</span><span class="step-text">Выберите действие: <code>!bm linkaction mute</code> — мут за ссылку</span></div>
       </div>
     </section>
 
@@ -565,23 +609,14 @@
       <h3>Как пополнить казну клана?</h3>
       <p>Используйте <code>!clan deposit &lt;сумма&gt;</code>.</p>
 
-      <h3>Что даёт клан?</h3>
-      <p>Бонус к заработку, общую казну и рейтинг.</p>
-
-      <h3>Как закрыть клан от вступления?</h3>
-      <p>Используйте <code>!clan close</code> (только для создателя).</p>
-
-      <h3>Как открыть клан обратно?</h3>
-      <p>Используйте <code>!clan open</code> (только для создателя).</p>
+      <h3>Как настроить приветствие?</h3>
+      <p>Используйте <code>!welcome join #канал</code>. Текст можно изменить командой <code>!welcome join message "Ваш текст с {user}"</code>.</p>
 
       <h3>Как включить фильтр ссылок?</h3>
       <p>Используйте <code>!bm linkfilter on</code>.</p>
 
       <h3>Что делать со ссылками?</h3>
       <p>Используйте <code>!bm linkaction warn</code> (предупреждение) или <code>!bm linkaction mute</code> (мут).</p>
-
-      <h3>Какие ссылки разрешены?</h3>
-      <p>Гифки и картинки с Giphy, Tenor, Imgur, Discord CDN, LOLKA CDN не блокируются.</p>
 
       <h3>Как посмотреть рейтинг кланов?</h3>
       <p>Введите <code>!clan top</code>.</p>
