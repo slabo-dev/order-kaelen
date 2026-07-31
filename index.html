@@ -80,6 +80,33 @@
             padding-bottom: 1rem;
         }
 
+        /* ---- КНОПКА В САЙДБАРЕ ---- */
+        .sidebar-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: 40px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .sidebar-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+        }
+        .sidebar-btn .icon {
+            font-size: 1.2rem;
+        }
+
         .sidebar-nav {
             list-style: none;
         }
@@ -444,7 +471,12 @@
     <aside class="sidebar">
         <a href="#" class="sidebar-logo">Kaelen<span>Bot</span></a>
         <div class="sidebar-badge">🤖 для LOLKA</div>
-        <div class="sidebar-sub">Полная документация v3.0</div>
+        <div class="sidebar-sub">Полная документация</div>
+
+        <!-- КНОПКА В САЙДБАРЕ -->
+        <a href="https://lolka.gg/dyemWMvQb" target="_blank" rel="noopener noreferrer" class="sidebar-btn">
+            <span class="icon">💬</span> Перейти в LOLKA
+        </a>
 
         <ul class="sidebar-nav">
             <li class="category">Старт</li>
@@ -1208,7 +1240,7 @@
         <footer class="footer">
             <p>© 2025 Kaelen Dev. Все права защищены.</p>
             <p style="margin-top: 0.25rem; font-size: 0.75rem;">
-                Документация для <strong>LOLKA</strong> и Discord — v3.0
+                Документация для <strong>LOLKA</strong> и Discord
             </p>
         </footer>
 
