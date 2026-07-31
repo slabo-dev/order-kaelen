@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaelen Bot — Документация</title>
-  <meta name="description" content="Kaelen Bot — универсальный бот для мессенджера LOLKA и Discord. Экономика, казино, модерация, кланы и полный набор команд." />
+  <title>Kaelen Bot — Документация для LOLKA</title>
+  <meta name="description" content="Kaelen Bot — универсальный бот для мессенджера LOLKA. Экономика, казино, модерация, кланы и полный набор команд." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* ===== БАЗА ===== */
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Inter',sans-serif;background:#0d0f1a;color:#e8edf5;line-height:1.7;scroll-behavior:smooth}
-    
-    /* ===== САЙДБАР ===== */
     .sidebar{position:fixed;top:0;left:0;width:280px;height:100vh;background:#0f111e;border-right:1px solid rgba(255,255,255,0.04);overflow-y:auto;padding:2rem 1.5rem;z-index:100}
     .sidebar::-webkit-scrollbar{width:4px}
     .sidebar::-webkit-scrollbar-thumb{background:#7c3aed;border-radius:4px}
@@ -23,37 +20,27 @@
     .sidebar-sub{font-size:0.8rem;color:#64748b;margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.04);padding-bottom:1rem}
     .sidebar-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.6rem 1rem;border-radius:40px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-weight:700;font-size:0.9rem;text-decoration:none;transition:all 0.2s;margin-bottom:1.5rem;border:none;cursor:pointer}
     .sidebar-btn:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(124,58,237,0.3)}
-    .sidebar-btn .icon{font-size:1.2rem}
     .sidebar-nav{list-style:none}
     .sidebar-nav li{margin-bottom:0.15rem}
     .sidebar-nav a{display:block;padding:0.4rem 0.75rem;border-radius:6px;color:#94a3b8;text-decoration:none;font-size:0.85rem;font-weight:500;transition:all 0.2s}
     .sidebar-nav a:hover{background:rgba(124,58,237,0.08);color:#7c3aed}
     .sidebar-nav .active{background:rgba(124,58,237,0.12);color:#7c3aed}
     .sidebar-nav .category{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:#475569;padding:0.75rem 0.75rem 0.25rem;font-weight:700}
-
-    /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
     .main{margin-left:280px;padding:2.5rem 3rem 4rem;max-width:1100px}
-
-    /* ХЕДЕР */
     .page-header{margin-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.04);padding-bottom:1.5rem}
     .page-header h1{font-size:3rem;font-weight:900;letter-spacing:-0.02em;line-height:1.1}
     .page-header h1 .highlight{background:linear-gradient(135deg,#7c3aed,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .page-header .sub{color:#94a3b8;font-size:1.1rem;margin-top:0.3rem}
     .page-header .badge-lolka{display:inline-block;background:rgba(139,92,246,0.15);color:#a78bfa;padding:0.2rem 1rem;border-radius:40px;font-size:0.75rem;font-weight:600;margin-top:0.5rem;border:1px solid rgba(139,92,246,0.2)}
-
-    /* СЕКЦИИ */
     .doc-section{margin-bottom:3.5rem;scroll-margin-top:1.5rem}
     .doc-section h2{font-size:1.8rem;font-weight:800;color:#7c3aed;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.04)}
     .doc-section h2 .emoji{font-size:1.6rem}
     .doc-section h3{font-size:1.25rem;font-weight:700;color:#e2e8f0;margin:1.5rem 0 0.5rem}
-    .doc-section h4{font-size:1rem;font-weight:600;color:#cbd5e1;margin:1rem 0 0.25rem}
     .doc-section p{color:#94a3b8;margin-bottom:0.75rem}
     .doc-section ul{color:#94a3b8;padding-left:1.5rem;margin-bottom:1rem}
     .doc-section ul li{margin-bottom:0.25rem}
     .doc-section .note{background:rgba(124,58,237,0.06);border-left:3px solid #7c3aed;padding:0.75rem 1.25rem;border-radius:0 8px 8px 0;margin:0.75rem 0 1.25rem;color:#cbd5e1;font-size:0.9rem}
     .doc-section .note strong{color:#7c3aed}
-
-    /* ТАБЛИЦЫ */
     .cmd-table{width:100%;border-collapse:collapse;margin:0.75rem 0 1.5rem;font-size:0.9rem;border-radius:10px;overflow:hidden}
     .cmd-table thead{background:rgba(255,255,255,0.03)}
     .cmd-table th{text-align:left;padding:0.6rem 1rem;color:#64748b;font-weight:600;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.06)}
@@ -61,35 +48,23 @@
     .cmd-table .cmd{font-family:monospace;color:#7c3aed;font-weight:600;white-space:nowrap;font-size:0.85rem}
     .cmd-table .desc{color:#94a3b8}
     .cmd-table tr:hover td{background:rgba(255,255,255,0.02)}
-
-    /* БЭЙДЖИ */
     .badge{display:inline-block;font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:0.1rem 0.6rem;border-radius:20px;margin-left:0.4rem}
     .badge-new{background:#7c3aed;color:#fff}
     .badge-beta{background:rgba(124,58,237,0.15);color:#7c3aed;border:1px solid rgba(124,58,237,0.2)}
-    .badge-admin{background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.2)}
-    .badge-lolka{background:rgba(139,92,246,0.15);color:#a78bfa;border:1px solid rgba(139,92,246,0.2)}
-
-    /* ГАЙДЫ */
     .guide{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:1.25rem 1.5rem;margin:1rem 0 1.5rem}
     .guide .step{display:flex;gap:0.75rem;margin-bottom:0.5rem;align-items:flex-start}
     .guide .step-num{background:#7c3aed;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;margin-top:0.1rem}
     .guide .step-text{color:#cbd5e1}
     .guide .step-text code{background:rgba(255,255,255,0.06);padding:0.1rem 0.4rem;border-radius:4px;font-size:0.85rem;color:#7c3aed}
-
     .example{background:rgba(255,255,255,0.03);border-left:3px solid #7c3aed;padding:1rem 1.5rem;border-radius:0 8px 8px 0;margin:0.75rem 0 1.25rem}
     .example code{display:block;font-family:monospace;font-size:0.85rem;color:#e2e8f0;white-space:pre-wrap;word-break:break-all}
     .example .output{color:#34d399;margin-top:0.5rem}
     .example .output.error{color:#ef4444}
-
-    /* БЭК-ТО-ТОП */
     .back-top{position:fixed;bottom:2rem;right:2rem;background:#7c3aed;color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.2rem;box-shadow:0 8px 24px rgba(124,58,237,0.3);transition:all 0.2s;opacity:0;pointer-events:none}
     .back-top.visible{opacity:1;pointer-events:auto}
     .back-top:hover{transform:scale(1.05);background:#6d28d9}
-
     .footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.04);text-align:center;color:#475569;font-size:0.85rem}
     .footer a{color:#7c3aed;text-decoration:none}
-
-    /* АДАПТИВ */
     @media(max-width:768px){
       .sidebar{position:relative;width:100%;height:auto;border-right:none;border-bottom:1px solid rgba(255,255,255,0.04);padding:1rem 1.5rem}
       .sidebar-nav{display:flex;flex-wrap:wrap;gap:0.25rem}
@@ -106,81 +81,62 @@
 </head>
 <body>
 
-  <!-- ===== САЙДБАР ===== -->
   <aside class="sidebar">
     <a href="#" class="sidebar-logo">Kaelen<span>Bot</span></a>
     <div class="sidebar-badge">🤖 для лолки</div>
     <div class="sidebar-sub">Полная документация</div>
-
-    <a href="https://lolka.gg/dyemWMvQb" target="_blank" rel="noopener noreferrer" class="sidebar-btn">
-      <span class="icon">💬</span> Добавить бота
-    </a>
-
+    <a href="https://lolka.gg/dyemWMvQb" target="_blank" rel="noopener noreferrer" class="sidebar-btn"><span class="icon">💬</span> Добавить бота</a>
     <ul class="sidebar-nav">
       <li class="category">Старт</li>
       <li><a href="#about" class="active">О боте</a></li>
       <li><a href="#setup">Установка в LOLKA</a></li>
       <li><a href="#prefixes">Префиксы</a></li>
       <li><a href="#permissions">Права доступа</a></li>
-
       <li class="category">Экономика</li>
       <li><a href="#economy">Команды</a></li>
       <li><a href="#economy-bank">Банк</a></li>
       <li><a href="#economy-daily">Ежедневный бонус</a></li>
       <li><a href="#economy-rob">Ограбление</a></li>
       <li><a href="#economy-top">Топ-10</a></li>
-
       <li class="category">Казино</li>
       <li><a href="#casino">Игры</a></li>
-
       <li class="category">Модерация</li>
       <li><a href="#moderation">Команды</a></li>
       <li><a href="#moderation-warn">Предупреждения</a></li>
-
       <li class="category">Администрирование</li>
       <li><a href="#admin">Настройка</a></li>
-
       <li class="category">Роли и Кнопки</li>
       <li><a href="#roles">По реакциям</a></li>
       <li><a href="#roles-buttons">Панель кнопок</a></li>
-
       <li class="category">Авто-модерация</li>
       <li><a href="#automod">Фильтр слов</a></li>
       <li><a href="#automod-mute">Авто-мут</a></li>
-
+      <li><a href="#automod-links">Фильтр ссылок</a></li>
       <li class="category">Настройка сервера</li>
       <li><a href="#setup-welcome">Приветствия</a></li>
       <li><a href="#setup-newbie">Роль новичка</a></li>
-
       <li class="category">Кастомные команды</li>
       <li><a href="#custom">Создание</a></li>
-
       <li class="category">Кланы</li>
       <li><a href="#clans">Система кланов</a></li>
-
       <li class="category">Гайды</li>
       <li><a href="#guides">Подробные инструкции</a></li>
-
       <li class="category">Дополнительно</li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
   </aside>
 
-  <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
   <main class="main" id="top">
-
-    <!-- ХЕДЕР -->
     <header class="page-header">
       <h1>Kaelen <span class="highlight">Bot</span></h1>
-      <p class="sub">Полная документация для мессенджера <strong>LOLKA</strong> и Discord</p>
+      <p class="sub">Полная документация для мессенджера <strong>LOLKA</strong></p>
       <span class="badge-lolka">🎮 Интеграция с LOLKA</span>
     </header>
 
-    <!-- ===== О БОТЕ ===== -->
     <section class="doc-section" id="about">
       <h2><span class="emoji">📖</span> О боте</h2>
-      <p><strong>Kaelen Bot</strong> — универсальный бот для <strong>мессенджера LOLKA</strong> и Discord. Он создан для управления сообществами, развлечения участников и автоматизации задач.</p>
-      <p>В отличие от обычных Discord-ботов, Kaelen Bot полностью адаптирован для работы в <strong>LOLKA</strong>: поддерживает команды через префиксы <code>!</code> и <code>/</code>, работает с ролями и кнопками, а также интегрируется с экономической системой платформы.</p>
+      <p><strong>Kaelen Bot</strong> — универсальный бот для <strong>мессенджера LOLKA</strong>. Он создан для управления сообществами, развлечения участников и автоматизации задач.</p>
+      <p>Kaelen Bot полностью адаптирован для работы в <strong>LOLKA</strong>: поддерживает команды через префиксы <code>!</code> и <code>/</code>, работает с ролями и кнопками, а также интегрируется с экономической системой платформы.</p>
       <h3>Что умеет бот</h3>
       <ul>
         <li><strong>Экономика</strong> — работа, баланс, банк, ежедневный бонус, ограбления, топ-10</li>
@@ -188,15 +144,14 @@
         <li><strong>Модерация</strong> — бан, кик, мут, очистка, предупреждения</li>
         <li><strong>Администрирование</strong> — логи, каналы, префикс, вебхуки</li>
         <li><strong>Роли и Кнопки</strong> — роли по реакциям, панель кнопок</li>
-        <li><strong>Авто-модерация</strong> — чёрный список слов, автоматический мут</li>
+        <li><strong>Авто-модерация</strong> — чёрный список слов, автоматический мут, <strong>фильтр ссылок</strong></li>
         <li><strong>Настройка сервера</strong> — приветствия, роль новичка, исключения</li>
         <li><strong>Кастомные команды</strong> — свои команды с текстом, кодом или выдачей роли</li>
-        <li><strong>Кланы</strong> — создание, управление, рейтинг, клановые сражения</li>
+        <li><strong>Кланы</strong> — создание, управление, рейтинг, клановая казна</li>
       </ul>
-      <div class="note"><strong>Важно:</strong> Для полноценной работы в LOLKA и Discord требуются права <strong>администратора</strong>.</div>
+      <div class="note"><strong>Важно:</strong> Для полноценной работы в LOLKA требуются права <strong>администратора</strong>.</div>
     </section>
 
-    <!-- ===== УСТАНОВКА ===== -->
     <section class="doc-section" id="setup">
       <h2><span class="emoji">🚀</span> Установка в LOLKA</h2>
       <p>Добавить бота в ваш чат или канал LOLKA очень просто. Следуйте инструкции:</p>
@@ -210,7 +165,6 @@
       <div class="note"><strong>Совет:</strong> Если бот не отвечает, проверьте, что он есть в чате, и что у него есть права на отправку сообщений.</div>
     </section>
 
-    <!-- ===== ПРЕФИКСЫ ===== -->
     <section class="doc-section" id="prefixes">
       <h2><span class="emoji">⚙️</span> Префиксы</h2>
       <p>Kaelen Bot поддерживает два префикса для команд. Используйте любой, который вам удобнее.</p>
@@ -225,7 +179,6 @@
       <div class="example"><code>!prefix ?</code><div class="output">✅ Префикс изменён на <code>?</code></div></div>
     </section>
 
-    <!-- ===== ПРАВА ДОСТУПА ===== -->
     <section class="doc-section" id="permissions">
       <h2><span class="emoji">🔐</span> Права доступа</h2>
       <p>Команды бота разделены по уровням доступа. Это обеспечивает безопасность и порядок.</p>
@@ -234,12 +187,11 @@
         <tbody>
           <tr><td><span class="cmd">Все участники</span></td><td class="desc">!work, !balance, !bank, !deposit, !withdraw, !pay, !daily, !top, !coinflip, !slots, !dice, !help, !clan</td></tr>
           <tr><td><span class="cmd">Модераторы</span></td><td class="desc">!mute, !unmute, !clear, !warn</td></tr>
-          <tr><td><span class="cmd">Администраторы</span></td><td class="desc">!ban, !unban, !kick, !prefix, !setlog, !seteconomy, !webhook, !restart, !version, !rr, !rrlist, !rrremove, !buttonpanel, !bm *, !welcome, !рольновичка, !адмроль, !createcommand, !deletecommand, !editcommand, !clan admin</td></tr>
+          <tr><td><span class="cmd">Администраторы</span></td><td class="desc">!ban, !unban, !kick, !prefix, !setlog, !seteconomy, !webhook, !restart, !version, !rr, !rrlist, !rrremove, !buttonpanel, !bm *, !welcome, !рольновичка, !адмроль, !createcommand, !deletecommand, !editcommand, !clan delete, !clan withdraw, !clan close, !clan open, !clan invite</td></tr>
         </tbody>
       </table>
     </section>
 
-    <!-- ===== ЭКОНОМИКА ===== -->
     <section class="doc-section" id="economy">
       <h2><span class="emoji">💼</span> Экономика</h2>
       <p>Полноценная экономическая система с валютой, банком и рейтингом.</p>
@@ -247,7 +199,7 @@
       <table class="cmd-table">
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
-          <tr><td><span class="cmd">!work</span></td><td class="desc">Получить случайный заработок за работу (от 50 до 500 монет)</td></tr>
+          <tr><td><span class="cmd">!work</span></td><td class="desc">Получить случайный заработок за работу (от 10 до 50 монет)</td></tr>
           <tr><td><span class="cmd">!balance</span></td><td class="desc">Показать текущий баланс на руках</td></tr>
           <tr><td><span class="cmd">!bank</span></td><td class="desc">Показать баланс в банке</td></tr>
           <tr><td><span class="cmd">!deposit &lt;сумма&gt;</span></td><td class="desc">Положить деньги в банк (безопасное хранение)</td></tr>
@@ -309,7 +261,6 @@
       </table>
     </section>
 
-    <!-- ===== КАЗИНО ===== -->
     <section class="doc-section" id="casino">
       <h2><span class="emoji">🎰</span> Казино</h2>
       <table class="cmd-table">
@@ -323,12 +274,11 @@
       <h4>Правила игр</h4>
       <ul>
         <li><strong>!coinflip</strong> — выберите орла или решку в сообщении: <code>!coinflip 100 орёл</code>. Если угадали — выигрыш ×2.</li>
-        <li><strong>!slots</strong> — бот генерирует три случайных символа (🍒🍋🍊🍇💎7). Выигрыш зависит от комбинации.</li>
+        <li><strong>!slots</strong> — бот генерирует три случайных символа (🍒🍋🍊🍇💎7️⃣). Выигрыш зависит от комбинации.</li>
         <li><strong>!dice</strong> — назовите число от 1 до 6. Если совпало — выигрыш ×6.</li>
       </ul>
     </section>
 
-    <!-- ===== МОДЕРАЦИЯ ===== -->
     <section class="doc-section" id="moderation">
       <h2><span class="emoji">🛡️</span> Модерация</h2>
       <table class="cmd-table">
@@ -339,7 +289,7 @@
           <tr><td><span class="cmd">!kick &lt;@участник&gt; [причина]</span></td><td class="desc">Выгнать участника из чата</td><td>Админ</td></tr>
           <tr><td><span class="cmd">!mute &lt;@участник&gt; &lt;время&gt; [причина]</span></td><td class="desc">Замутить участника. Время: 10m, 1h, 1d</td><td>Модератор</td></tr>
           <tr><td><span class="cmd">!unmute &lt;@участник&gt;</span></td><td class="desc">Размутить участника</td><td>Модератор</td></tr>
-          <tr><td><span class="cmd">!clear &lt;количество&gt;</span></td><td class="desc">Очистить указанное количество сообщений (до 1000)</td><td>Модератор</td></tr>
+          <tr><td><span class="cmd">!clear &lt;количество&gt;</span></td><td class="desc">Очистить указанное количество сообщений (до 100)</td><td>Модератор</td></tr>
           <tr><td><span class="cmd">!warn &lt;@участник&gt; [причина]</span></td><td class="desc">Выдать предупреждение <span class="badge badge-new">Система предупреждений</span></td><td>Модератор</td></tr>
         </tbody>
       </table>
@@ -364,7 +314,6 @@
       </ul>
     </section>
 
-    <!-- ===== АДМИНИСТРИРОВАНИЕ ===== -->
     <section class="doc-section" id="admin">
       <h2><span class="emoji">👑</span> Администрирование</h2>
       <table class="cmd-table">
@@ -381,7 +330,6 @@
       </table>
     </section>
 
-    <!-- ===== РОЛИ И КНОПКИ ===== -->
     <section class="doc-section" id="roles">
       <h2><span class="emoji">🎭</span> Роли и Кнопки</h2>
       <h3>Роли по реакциям</h3>
@@ -402,8 +350,6 @@
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
           <tr><td><span class="cmd">!buttonpanel</span></td><td class="desc">Создать панель с кнопками для выдачи ролей <span class="badge badge-new">Новое</span></td></tr>
-          <tr><td><span class="cmd">!buttonpanel add &lt;@роль&gt; &lt;текст_кнопки&gt; &lt;эмодзи&gt;</span></td><td class="desc">Добавить кнопку в существующую панель</td></tr>
-          <tr><td><span class="cmd">!buttonpanel remove &lt;ID&gt;</span></td><td class="desc">Удалить кнопку из панели</td></tr>
         </tbody>
       </table>
     </section>
@@ -411,7 +357,9 @@
     <!-- ===== АВТО-МОДЕРАЦИЯ ===== -->
     <section class="doc-section" id="automod">
       <h2><span class="emoji">🚫</span> Авто-модерация</h2>
-      <h3>Управление чёрным списком</h3>
+      <p>Бот автоматически фильтрует сообщения по чёрному списку слов и ссылкам.</p>
+
+      <h3>Управление чёрным списком слов</h3>
       <table class="cmd-table">
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
@@ -421,10 +369,8 @@
           <tr><td><span class="cmd">!bm clearwords</span></td><td class="desc">Очистить весь чёрный список</td></tr>
         </tbody>
       </table>
-    </section>
 
-    <section class="doc-section" id="automod-mute">
-      <h3>🔇 Авто-мут</h3>
+      <h3>Управление авто-мутом</h3>
       <table class="cmd-table">
         <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
         <tbody>
@@ -441,7 +387,42 @@
       </ul>
     </section>
 
-    <!-- ===== НАСТРОЙКА СЕРВЕРА ===== -->
+    <!-- ===== ФИЛЬТР ССЫЛОК ===== -->
+    <section class="doc-section" id="automod-links">
+      <h2><span class="emoji">🔗</span> Фильтр ссылок</h2>
+      <p>Автоматическая блокировка ссылок на сторонние сайты.</p>
+
+      <div class="note">
+        <strong>Разрешённые домены (гифки, изображения, медиа):</strong>
+        giphy.com, tenor.com, imgur.com, cdn.discordapp.com,
+        media.tenor.com, i.imgur.com, i.giphy.com, media.giphy.com,
+        lolka.app, cdn.lolka.app
+      </div>
+
+      <table class="cmd-table">
+        <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cmd">!bm linkfilter on/off</span></td><td class="desc">Включить/выключить фильтр ссылок</td></tr>
+          <tr><td><span class="cmd">!bm linkaction warn/mute</span></td><td class="desc">Действие при обнаружении ссылки: предупреждение или мут</td></tr>
+        </tbody>
+      </table>
+
+      <div class="example">
+        <code>!bm linkfilter on</code>
+        <div class="output">✅ Фильтр ссылок включён!</div>
+        <code>!bm linkaction mute</code>
+        <div class="output">✅ Действие при ссылке установлено на `mute`!</div>
+      </div>
+
+      <ul>
+        <li><strong>linkfilter on</strong> — включить блокировку ссылок</li>
+        <li><strong>linkfilter off</strong> — выключить блокировку ссылок</li>
+        <li><strong>linkaction warn</strong> — при ссылке выдаётся предупреждение</li>
+        <li><strong>linkaction mute</strong> — при ссылке выдаётся автоматический мут</li>
+        <li>Ссылки на разрешённые домены (гифки, картинки) не блокируются</li>
+      </ul>
+    </section>
+
     <section class="doc-section" id="setup-welcome">
       <h2><span class="emoji">👋</span> Приветствия</h2>
       <table class="cmd-table">
@@ -468,7 +449,6 @@
       </table>
     </section>
 
-    <!-- ===== КАСТОМНЫЕ КОМАНДЫ ===== -->
     <section class="doc-section" id="custom">
       <h2><span class="emoji">📝</span> Кастомные команды</h2>
       <table class="cmd-table">
@@ -501,52 +481,47 @@
         <thead><tr><th>Команда</th><th>Описание</th><th>Права</th></tr></thead>
         <tbody>
           <tr><td><span class="cmd">!clan create &lt;название&gt;</span></td><td class="desc">Создать клан <span class="badge badge-new">Требуется 1000 монет</span></td><td>Все</td></tr>
-          <tr><td><span class="cmd">!clan invite &lt;@участник&gt;</span></td><td class="desc">Пригласить участника в клан</td><td>Лидер</td></tr>
-          <tr><td><span class="cmd">!clan join &lt;название&gt;</span></td><td class="desc">Принять приглашение в клан</td><td>Все</td></tr>
+          <tr><td><span class="cmd">!clan join &lt;название&gt;</span></td><td class="desc">Вступить в клан</td><td>Все</td></tr>
           <tr><td><span class="cmd">!clan leave</span></td><td class="desc">Покинуть клан</td><td>Все</td></tr>
-          <tr><td><span class="cmd">!clan kick &lt;@участник&gt;</span></td><td class="desc">Исключить участника из клана</td><td>Лидер</td></tr>
           <tr><td><span class="cmd">!clan info</span></td><td class="desc">Информация о клане</td><td>Все</td></tr>
+          <tr><td><span class="cmd">!clan list</span></td><td class="desc">Список всех кланов</td><td>Все</td></tr>
+          <tr><td><span class="cmd">!clan balance</span></td><td class="desc">Баланс клановой казны</td><td>Все</td></tr>
+          <tr><td><span class="cmd">!clan deposit &lt;сумма&gt;</span></td><td class="desc">Внести коины в казну клана</td><td>Все</td></tr>
+          <tr><td><span class="cmd">!clan withdraw &lt;сумма&gt;</span></td><td class="desc">Вывести коины из казны</td><td>Создатель</td></tr>
           <tr><td><span class="cmd">!clan top</span></td><td class="desc">Рейтинг кланов</td><td>Все</td></tr>
-          <tr><td><span class="cmd">!clan donate &lt;сумма&gt;</span></td><td class="desc">Пожертвовать деньги в казну клана</td><td>Все</td></tr>
-          <tr><td><span class="cmd">!clan bank</span></td><td class="desc">Проверить казну клана</td><td>Все</td></tr>
-          <tr><td><span class="cmd">!clan admin &lt;@участник&gt;</span></td><td class="desc">Назначить администратора клана</td><td>Лидер</td></tr>
+          <tr><td><span class="cmd">!clan daily</span></td><td class="desc">Ежедневный бонус для клана</td><td>Все</td></tr>
+          <tr><td><span class="cmd">!clan delete</span></td><td class="desc">Удалить клан</td><td>Создатель</td></tr>
+          <tr><td><span class="cmd">!clan invite &lt;@участник&gt;</span></td><td class="desc">Пригласить участника в клан</td><td>Создатель</td></tr>
+          <tr><td><span class="cmd">!clan close</span></td><td class="desc">Закрыть клан (вступление только по приглашению)</td><td>Создатель</td></tr>
+          <tr><td><span class="cmd">!clan open</span></td><td class="desc">Открыть клан (свободное вступление)</td><td>Создатель</td></tr>
         </tbody>
       </table>
 
       <h3>Преимущества кланов</h3>
       <ul>
-        <li><strong>Общая казна</strong> — участники могут пополнять казну, лидер распределяет ресурсы</li>
-        <li><strong>Клановые бонусы</strong> — участники получают бонусы к работе и ограблениям (+10% к заработку)</li>
-        <li><strong>Рейтинг</strong> — кланы соревнуются по общей сумме денег и количеству участников</li>
-        <li><strong>Клановые чаты</strong> — отдельный канал для общения внутри клана</li>
-        <li><strong>Клановые задания</strong> — совместные задания с наградами (в разработке)</li>
+        <li><strong>Общая казна</strong> — участники пополняют, лидер распределяет</li>
+        <li><strong>Клановые бонусы</strong> — +10% к заработку и ограблениям</li>
+        <li><strong>Рейтинг</strong> — соревнование по богатству кланов</li>
+        <li><strong>Ежедневный бонус</strong> — пополнение казны за активность</li>
+        <li><strong>Закрытый режим</strong> — можно ограничить вступление только по приглашениям</li>
       </ul>
 
-      <div class="note">
-        <strong>Важно:</strong> Создание клана стоит <strong>1000 монет</strong>. Клан может иметь до <strong>50 участников</strong>. Лидер может назначить до <strong>5 администраторов</strong>.
-      </div>
+      <div class="note"><strong>Важно:</strong> Создание клана стоит <strong>1000 монет</strong>. Клан может иметь до <strong>50 участников</strong>.</div>
 
       <div class="example">
         <code>!clan create "Тёмные рыцари"</code>
         <div class="output">✅ Клан "Тёмные рыцари" создан! Вы — лидер клана.</div>
+        <code>!clan close</code>
+        <div class="output">🔒 Клан "Тёмные рыцари" теперь закрыт. Вступить можно только по приглашению!</div>
         <code>!clan invite @User</code>
-        <div class="output">📨 Приглашение отправлено @User. Он может вступить командой !clan join "Тёмные рыцари"</div>
+        <div class="output">📩 Приглашение отправлено @User! Он может вступить командой !clan join "Тёмные рыцари"</div>
         <code>!clan info</code>
-        <div class="output">📋 Клан "Тёмные рыцари"<br>Лидер: @order<br>Участников: 5<br>Казна: 2500 монет<br>Рейтинг: #3</div>
+        <div class="output">📋 Клан "Тёмные рыцари"<br>Лидер: @order<br>Участников: 5<br>Казна: 2500 монет<br>Рейтинг: #3<br>🔒 Статус: Закрыт</div>
+        <code>!clan deposit 500</code>
+        <div class="output">✅ Вы внесли 500 монет в казну клана!</div>
       </div>
-
-      <h3>Команды для администраторов клана</h3>
-      <table class="cmd-table">
-        <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
-        <tbody>
-          <tr><td><span class="cmd">!clan motd &lt;текст&gt;</span></td><td class="desc">Установить сообщение дня для клана</td></tr>
-          <tr><td><span class="cmd">!clan channel &lt;#канал&gt;</span></td><td class="desc">Установить клановый канал</td></tr>
-          <tr><td><span class="cmd">!clan role &lt;@роль&gt;</span></td><td class="desc">Установить роль для участников клана</td></tr>
-        </tbody>
-      </table>
     </section>
 
-    <!-- ===== ГАЙДЫ ===== -->
     <section class="doc-section" id="guides">
       <h2><span class="emoji">📘</span> Подробные гайды</h2>
 
@@ -554,22 +529,24 @@
       <div class="guide">
         <div class="step"><span class="step-num">1</span><span class="step-text">Убедитесь, что у вас есть <strong>1000 монет</strong> для создания клана.</span></div>
         <div class="step"><span class="step-num">2</span><span class="step-text">Введите <code>!clan create "Название клана"</code> — клан создан, вы стали лидером.</span></div>
-        <div class="step"><span class="step-num">3</span><span class="step-text">Приглашайте участников: <code>!clan invite @User</code> — они получат приглашение.</span></div>
-        <div class="step"><span class="step-num">4</span><span class="step-text">Участники вступают: <code>!clan join "Название клана"</code>.</span></div>
-        <div class="step"><span class="step-num">5</span><span class="step-text">Пополняйте казну: <code>!clan donate 500</code> — деньги пойдут в общую казну.</span></div>
-        <div class="step"><span class="step-num">6</span><span class="step-text">Следите за рейтингом: <code>!clan top</code> — показывает лучшие кланы.</span></div>
+        <div class="step"><span class="step-num">3</span><span class="step-text">Закройте клан: <code>!clan close</code> — теперь вступить можно только по приглашению.</span></div>
+        <div class="step"><span class="step-num">4</span><span class="step-text">Приглашайте участников: <code>!clan invite @User</code> — они получат приглашение.</span></div>
+        <div class="step"><span class="step-num">5</span><span class="step-text">Участники вступают: <code>!clan join "Название клана"</code>.</span></div>
+        <div class="step"><span class="step-num">6</span><span class="step-text">Пополняйте казну: <code>!clan deposit 500</code> — деньги пойдут в общую казну.</span></div>
+        <div class="step"><span class="step-num">7</span><span class="step-text">Следите за рейтингом: <code>!clan top</code> — показывает лучшие кланы.</span></div>
       </div>
 
-      <h3>Гайд 2: Настройка авто-модерации</h3>
+      <h3>Гайд 2: Настройка авто-модерации и фильтра ссылок</h3>
       <div class="guide">
         <div class="step"><span class="step-num">1</span><span class="step-text">Добавьте слова в чёрный список: <code>!bm addword мат</code></span></div>
         <div class="step"><span class="step-num">2</span><span class="step-text">Проверьте список: <code>!bm listwords</code></span></div>
         <div class="step"><span class="step-num">3</span><span class="step-text">Включите авто-модерацию: <code>!bm enable</code></span></div>
         <div class="step"><span class="step-num">4</span><span class="step-text">Настройте авто-мут: <code>!bm mutemode on</code> и <code>!bm mutetime 600</code></span></div>
+        <div class="step"><span class="step-num">5</span><span class="step-text">Включите фильтр ссылок: <code>!bm linkfilter on</code></span></div>
+        <div class="step"><span class="step-num">6</span><span class="step-text">Выберите действие: <code>!bm linkaction mute</code> — мут за ссылку</span></div>
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
     <section class="doc-section" id="faq">
       <h2><span class="emoji">❓</span> FAQ</h2>
 
@@ -586,10 +563,25 @@
       <p>До 50 участников.</p>
 
       <h3>Как пополнить казну клана?</h3>
-      <p>Используйте <code>!clan donate &lt;сумма&gt;</code>.</p>
+      <p>Используйте <code>!clan deposit &lt;сумма&gt;</code>.</p>
 
       <h3>Что даёт клан?</h3>
-      <p>Бонус к заработку, общую казну, рейтинг и клановые задания.</p>
+      <p>Бонус к заработку, общую казну и рейтинг.</p>
+
+      <h3>Как закрыть клан от вступления?</h3>
+      <p>Используйте <code>!clan close</code> (только для создателя).</p>
+
+      <h3>Как открыть клан обратно?</h3>
+      <p>Используйте <code>!clan open</code> (только для создателя).</p>
+
+      <h3>Как включить фильтр ссылок?</h3>
+      <p>Используйте <code>!bm linkfilter on</code>.</p>
+
+      <h3>Что делать со ссылками?</h3>
+      <p>Используйте <code>!bm linkaction warn</code> (предупреждение) или <code>!bm linkaction mute</code> (мут).</p>
+
+      <h3>Какие ссылки разрешены?</h3>
+      <p>Гифки и картинки с Giphy, Tenor, Imgur, Discord CDN, LOLKA CDN не блокируются.</p>
 
       <h3>Как посмотреть рейтинг кланов?</h3>
       <p>Введите <code>!clan top</code>.</p>
@@ -598,15 +590,13 @@
       <p>Проверьте права бота и правильность префикса.</p>
     </section>
 
-    <!-- ===== ФУТЕР ===== -->
     <footer class="footer">
       <p>© 2025 Kaelen Dev. Все права защищены.</p>
-      <p style="margin-top:0.25rem;font-size:0.75rem;">Документация для <strong>LOLKA</strong> и Discord</p>
+      <p style="margin-top:0.25rem;font-size:0.75rem;">Документация для <strong>LOLKA</strong></p>
     </footer>
 
   </main>
 
-  <!-- ===== БЭК-ТО-ТОП ===== -->
   <a href="#top" class="back-top" id="backTop">↑</a>
 
   <script>
